@@ -1,7 +1,10 @@
 const http = require("http");
 http.createServer((request, response) => {
+    if (request.method === "POST") {
+        console.log("requested POST");
+    }
+
     if (request.url === "/OK") {
-        console.log("Request accepted.");
         response.writeHead(200);
     }
     else if (request.url === "/Bad-Request") {
