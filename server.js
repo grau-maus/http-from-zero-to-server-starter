@@ -28,8 +28,11 @@ http.createServer((request, response) => {
     else if (request.url === "/Unauthorized") {
         response.writeHead(401);
     }
+    else if (request.url === "/Bonus/Webpage") {
+        response.writeHead(200, { "Content-Type": "text/html" });
+        response.write("<h1>Hello World html</h1>");
+    }
     else if (request.url === "/Bonus/Redirect") {
-        // response.writeHead(302);
         response.writeHead(302, { "Location": "http://localhost:3000/Forbidden" });
     }
     else {
